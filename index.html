@@ -4,19 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Meteo Hub</title>
   </head>
   <body>
     <div class="container-box">
       <header>
-        <input type="search" placeholder="Enter a city..." required />
-        <input type="submit" value="Search" />
+        <div class="city-search-form">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            class="city-input"
+          />
+          <input type="submit" value="Search" class="city-search-botton" />
+        </div>
+        <hr />
       </header>
       <main>
-        <h1>Zurich</h1>
-        <p>Tuesday 13:47, scattered clouds Humidity: 43%, Wind: 6.69km/h</p>
-        🌥️24°C
+        <div class="search-output-container">
+          <div>
+            <h1 class="city-result">Zurich</h1>
+            <div class="weather-data">
+              Tuesday 13:47, scattered clouds
+              <br />
+              Humidity: <strong>43%</strong>, Wind: <strong>6.69km/h</strong>
+            </div>
+          </div>
+          <div class="weather-temperature">🌥️24°C</div>
+        </div>
       </main>
+      <hr />
       <footer>
         This project was coded by
         <a href="https://github.com/AdiO-25" target="_blank">AdiO-25</a>, is
