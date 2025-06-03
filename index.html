@@ -15,21 +15,27 @@
   <body>
     <div class="container-box">
       <header>
-        <div class="city-search-form">
+        <form class="city-search-form" id="city-form">
           <input
             type="search"
             placeholder="Enter a city..."
             required
             class="city-input"
+            id="city-input"
           />
-          <input type="submit" value="Search" class="city-search-botton" />
-        </div>
+          <input
+            type="submit"
+            value="Search"
+            class="city-search-botton"
+            id="city-botton"
+          />
+        </form>
         <hr />
       </header>
       <main>
         <div class="search-output-container">
           <div>
-            <h1 class="city-result">Zurich</h1>
+            <h1 class="city-result" id="city-result">Zurich</h1>
             <div class="weather-data">
               Tuesday 13:47, scattered clouds
               <br />
