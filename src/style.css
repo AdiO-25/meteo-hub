@@ -41,33 +41,55 @@ hr {
   padding: 10px 5px;
   border-radius: 5px;
   border: none;
-  background-color: #c499b6;
+  background-color: #590b3f;
   font-size: 17px;
   color: #fff7f3;
-  border: 1px solid #c499b6;
+  border: 1px solid #590b3f;
   font-weight: bold;
   margin-left: 5px;
 }
 
 .search-output-container {
   display: flex;
+  justify-content: space-between;
 }
 
 .city-result {
   font-size: 40px;
-  margin: 0;
+  margin: 0 0 20px 0;
+  color: #590b3f;
 }
 
 .weather-data {
   color: rgba(39, 33, 66, 0.4);
-  line-height: 20px;
+  line-height: 25px;
 }
 .weather-data strong {
-  color: #cd5656;
+  color: #590b3f;
 }
 
 .weather-temperature {
-  color: rgba(39, 33, 66, 0.4);
+  color: #590b3f;
+  margin-top: 20px;
+  margin-right: 20px;
+  display: flex;
+}
+
+.temperature-icon {
+  font-size: 50px;
+  margin-right: 5px;
+}
+
+.temperature-number {
+  font-size: 50px;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.temperature-metrics {
+  font-size: 20px;
+  margin-top: 16px;
 }
 
 footer {
