@@ -10,7 +10,7 @@ function updateCityTemperature(response) {
 
 function showCurrentTemperatur(city) {
   let apiKey = "ffda897ab634820409o4f30t6c83a646";
-  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units={metric}`;
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiURL).then(updateCityTemperature);
 }
 
@@ -23,3 +23,5 @@ function showSearchCity(event) {
 
 let searchFormElement = document.querySelector("#city-form");
 searchFormElement.addEventListener("submit", showSearchCity);
+
+showCurrentTemperatur("Paris");
