@@ -38,13 +38,19 @@
           <div>
             <h1 class="city-result" id="city-result"></h1>
             <div class="weather-data">
-              Tuesday 13:47, scattered clouds
+              <span id="time">Tuesday, 13:47</span>,
+              <span id="description">scattered clouds</span>
               <br />
-              Humidity: <strong>43%</strong>, Wind: <strong>6.69km/h</strong>
+              Humidity: <strong id="humidity">43%</strong>, Wind:
+              <strong id="wind">6.69km/h</strong>
             </div>
           </div>
           <div class="weather-temperature">
-            <span class="temperature-icon">🌥️</span>
+            <span id="temperature-icon">
+              <img
+                class="temperature-icon"
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+            /></span>
             <span class="temperature-number" id="current-temperature-number"
               >24</span
             >
