@@ -92,6 +92,37 @@ hr {
   margin-top: 16px;
 }
 
+.forecast-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.forecast-container-day {
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+  margin-top: 10px;
+}
+
+.forecast-container-icon {
+  text-align: center;
+  font-size: 30px;
+}
+
+.forecast-container-temperatures {
+  text-align: center;
+  color: rgba(39, 33, 66, 0.4);
+  margin-top: 10px;
+  color: #590b3f;
+  display: flex;
+  justify-content: center;
+}
+
+.forecast-container-temperature-max {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
 footer {
   color: rgba(0, 0, 0, 0.6);
   font-size: 14px;
