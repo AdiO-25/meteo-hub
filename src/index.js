@@ -21,6 +21,8 @@ function updateCityTemperature(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   currentTemperatureElement.innerHTML = Math.round(temperatureElement);
   cityResult.innerHTML = response.data.city;
+
+  getForecastTemperature(response.data.city);
 }
 
 function formatDate(date) {
@@ -60,24 +62,41 @@ function showSearchCity(event) {
 let searchFormElement = document.querySelector("#city-form");
 searchFormElement.addEventListener("submit", showSearchCity);
 
-function showForecast() {
+function formatTime(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+
+function getForecastTemperature(city) {
+  let apiKey = "ffda897ab634820409o4f30t6c83a646";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiURL).then(refreshForecast);
+}
+
+function refreshForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHTML = "";
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="forecast-day">
-<div class="forecast-container-day">${day}</div>
-<div class="forecast-container-icon">🌥️</div>
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="forecast-day">
+<div class="forecast-container-day">${formatTime(day.time)}</div>
+<img class="forecast-container-icon" src="${day.condition.icon_url}" />
 <div class="forecast-container-temperatures">
-  <div class="forecast-container-temperature-max">19°</div>
-  <div class="forecast-container-temperature-min">12°</div>
+  <div class="forecast-container-temperature-max">${Math.round(
+    day.temperature.maximum
+  )}°</div>
+  <div class="forecast-container-temperature-min">${Math.round(
+    day.temperature.minimum
+  )}°</div>
 </div>
-</div>`;
+</div>
+`;
+    }
   });
   forecastElement.innerHTML = forecastHTML;
 }
 
 showCurrentTemperatur("Paris");
-showForecast();
